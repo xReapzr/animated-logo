@@ -1,0 +1,178 @@
+/* BODY */
+
+body{
+
+    margin:0;
+
+    background:transparent;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    overflow:hidden;
+}
+
+/* PANEL */
+
+.panel{
+
+    width:260px;
+    height:360px;
+
+    margin-top:20px;
+
+    background:linear-gradient(
+    to bottom,
+    #ff4d74,
+    #ff1744
+    );
+
+    clip-path:polygon(
+    0 0,
+    100% 0,
+    100% 85%,
+    50% 100%,
+    0 85%
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 25px #ff1744,
+    0 0 70px rgba(255,23,68,0.7),
+    0 0 160px rgba(255,23,68,0.25);
+
+    animation:
+    panelFloat 4s ease-in-out infinite,
+    panelGlow 3s ease-in-out infinite;
+}
+
+/* LOGO */
+
+.logo{
+
+    width:175px;
+
+    transform-origin:center center;
+
+    filter:
+    drop-shadow(0 0 10px rgba(255,255,255,0.12));
+
+    animation:
+    breathing 2.8s linear infinite;
+}
+
+/* ANIMACION PRINCIPAL */
+/* RESPIRACION + MOVIMIENTO FLUIDO */
+
+@keyframes breathing{
+
+    0%{
+
+        transform:
+        rotate(-4deg)
+        scale(1);
+
+    }
+
+    12%{
+
+        transform:
+        rotate(-2deg)
+        scale(1.015);
+
+    }
+
+    25%{
+
+        transform:
+        rotate(0deg)
+        scale(1.03);
+
+    }
+
+    37%{
+
+        transform:
+        rotate(2deg)
+        scale(1.05);
+
+    }
+
+    50%{
+
+        transform:
+        rotate(4deg)
+        scale(1.075);
+
+    }
+
+    62%{
+
+        transform:
+        rotate(2deg)
+        scale(1.05);
+
+    }
+
+    75%{
+
+        transform:
+        rotate(0deg)
+        scale(1.03);
+
+    }
+
+    87%{
+
+        transform:
+        rotate(-2deg)
+        scale(1.015);
+
+    }
+
+    100%{
+
+        transform:
+        rotate(-4deg)
+        scale(1);
+
+    }
+}
+
+/* FLOTADO DEL PANEL */
+
+@keyframes panelFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(2px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* GLOW DEL PANEL */
+
+@keyframes panelGlow{
+
+    0%{
+        filter:brightness(1);
+    }
+
+    50%{
+        filter:brightness(1.08);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+}
